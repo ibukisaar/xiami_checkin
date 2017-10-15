@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp虾米签到", "CSharp虾米签到\CSharp虾米签到.csproj", "{4F5D324F-6AA3-40AC-B4C7-A6D6B2D7E28B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F5D324F-6AA3-40AC-B4C7-A6D6B2D7E28B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F5D324F-6AA3-40AC-B4C7-A6D6B2D7E28B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F5D324F-6AA3-40AC-B4C7-A6D6B2D7E28B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F5D324F-6AA3-40AC-B4C7-A6D6B2D7E28B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2CCE0ADB-9720-4DBB-A8AA-8DA7E6DF605B}
+	EndGlobalSection
+EndGlobal
