@@ -56,7 +56,7 @@ namespace CSharp虾米签到 {
 			return result;
 		}
 
-		static void Login(string email, string password) {
+		static bool Login(string email, string password) {
 			var http = WebRequest.CreateHttp(LoginHomeUrl);
 			http.Method = "GET";
 			http.UserAgent = UserAgent;
@@ -81,7 +81,9 @@ namespace CSharp虾米签到 {
 			Console.WriteLine($"登录：{result}");
 			if (!result.Contains("true")) {
 				MessageBox.Show("虾米签到登录失败。", "错误");
+				return false;
 			}
+			return true;
 		}
 
 		static void CheckIn() {
@@ -109,8 +111,8 @@ namespace CSharp虾米签到 {
 		}
 
 		static void Main(string[] args) {
-			Login("your email", "your password");
-			CheckIn();
+			if (Login("your email", "your password"))
+				CheckIn();
 		}
 	}
 }
