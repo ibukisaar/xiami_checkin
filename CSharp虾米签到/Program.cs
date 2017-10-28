@@ -15,7 +15,7 @@ namespace CSharp虾米签到 {
 		const string CheckInUrl = "http://www.xiami.com/task/signin";
 		const string UserAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36";
 
-		static readonly Uri HostUri = new Uri("https://xiami.com");
+		static readonly Uri HostUri = new Uri("http://www.xiami.com");
 
 		static CookieContainer cookies = new CookieContainer();
 
@@ -111,7 +111,7 @@ namespace CSharp虾米签到 {
 		}
 
 		static void Main(string[] args) {
-			if (Login("your email", "your password"))
+			if (Login("email", "password"))
 				CheckIn();
 		}
 	}
