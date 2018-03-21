@@ -43,6 +43,7 @@ namespace CSharp虾米签到 {
 			writeStream.Flush();
 			using (var res = http.GetResponse()) {
 				if (res.Headers["Set-Cookie"] != null) cookies.SetCookies(HostUri, res.Headers["Set-Cookie"]);
+				var setcookie = res.Headers["Set-Cookie"];
 				return new StreamReader(res.GetResponseStream(), Encoding.UTF8).ReadToEnd();
 			}
 		}
@@ -95,18 +96,18 @@ namespace CSharp虾米签到 {
 			cookies.Add(HostUri, new Cookie("user", cookie["user"]));
 			cookies.Add(HostUri, new Cookie("member_auth", cookie["member_auth"]));
 			cookies.Add(HostUri, new Cookie("login_method", cookie["login_method"]));
-			var result = Post(CheckInUrl, headers);
+			var result = Post(CheckInUrl, headers).Trim();
 			if (!int.TryParse(result, out _)) {
-				MessageBox.Show("虾米签到过程中发生错误，服务器返回结果不是整型。", "错误");
+				MessageBox.Show("虾米签到过程中发生错误，服务器返回结果不是整型。(1)", "错误");
 				return;
 			}
 
 			cookies.Add(HostUri, new Cookie("t_sign_auth", result));
-			result = Post(CheckInUrl, headers);
+			result = Post(CheckInUrl, headers).Trim();
 			if (int.TryParse(result, out _)) {
 				Console.WriteLine($"签到天数：{result}");
 			} else {
-				MessageBox.Show("虾米签到过程中发生错误，服务器返回结果不是整型。", "错误");
+				MessageBox.Show("虾米签到过程中发生错误，服务器返回结果不是整型。(2)", "错误");
 			}
 		}
 
